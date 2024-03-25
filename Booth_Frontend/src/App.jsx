@@ -1,32 +1,34 @@
 import { useState, createContext } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { VoterId } from "./components/VoterID";
-import { FetchID } from "./components/FetchID";
+import { FetchNAME } from "./pages/FetchNAME";
+import { FetchID } from "./pages/FetchID";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { NAVBAR } from "./components/NAVBAR";
+import { HOME } from "./pages/HOME";
+import { FetchFHNAME } from "./pages/FetchFHNAME";
+
 export const AppContext = createContext();
+
 function App() {
   const query = new QueryClient();
-  const [ID, setID] = useState("abc000");
+  const [INPUT, setINPUT] = useState("சண்முகம்");
+
   return (
     <>
-      <AppContext.Provider value={{ ID }}>
+      <AppContext.Provider value={{ INPUT , setINPUT}}>
         <div>
           <QueryClientProvider client={query}>
             <Router>
-              <h1>Booth 156</h1>
+              <NAVBAR/>
               <div>
-                <input
-                  type="text"
-                  placeholder="Enter Voter ID"
-                  onChange={(event) => {
-                    setID(event.target.value);
-                  }}
-                />
-
-                <FetchID />
+                
+                {/* <button onClick={() => fetchData()}>click</button>  */}
                 <Routes>
-                  <Route path="/booths/ID" element={<VoterId />}></Route>
+                  <Route path="/" element={<HOME/>}></Route>
+                  <Route path="/fetchid" element={<FetchID/>}></Route>
+                  <Route path="/fetchname" element={<FetchNAME/>}></Route>
+                  <Route path="/fetchfhname" element={<FetchFHNAME/>}></Route>
                 </Routes>
               </div>
             </Router>

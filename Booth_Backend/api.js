@@ -14,6 +14,7 @@ app.use(express.json());
 // } catch{
 //     LIST = []
 // }
+
 const voterSchema = new mongoose.Schema({
     Booth: Number,
     PN: Number,
@@ -46,13 +47,37 @@ const voterSchema = new mongoose.Schema({
     }
 });
 
-app.post("/booths/NAME", (req, res) => {
-    const name = req.query.name
-    const person = LIST.findOne((a) => a.Name === name)
-    if(person){
-        res.json(person)
-    }else{
-        res.send("not present").status(404)
+app.post("/booths/NAME", async(req, res) => {
+    const name = String(req.query.name)
+    try {
+        const person = await voterList.findOne({ Name: name });
+        console.log('Retrieved person:', person);
+
+        if (person) {
+            res.json(person);
+        } else {
+            res.status(404).send("Person not found.");
+        }
+    } catch (error) {
+        console.error('Error retrieving person:', error);
+        res.status(500).send("Internal Server Error");
+    }
+});
+
+app.post("/booths/FH_NAME", async(req, res) => {
+    const name = String(req.query.name)
+    try {
+        const person = await voterList.find({ Father_Husband : name });
+        console.log('Retrieved person:', person);
+
+        if (person) {
+            res.json(person);
+        } else {
+            res.status(404).send("Person not found.");
+        }
+    } catch (error) {
+        console.error('Error retrieving person:', error);
+        res.status(500).send("Internal Server Error");
     }
 });
 
