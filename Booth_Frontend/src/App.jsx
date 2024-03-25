@@ -7,7 +7,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 export const AppContext = createContext();
 function App() {
   const query = new QueryClient();
-  const [ID, setID] = useState();
+  const [ID, setID] = useState("abc000");
   return (
     <>
       <AppContext.Provider value={{ ID }}>

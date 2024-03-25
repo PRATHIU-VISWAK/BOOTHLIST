@@ -2,32 +2,53 @@ const express = require("express");
 const app = express();
 const fs = require('fs')
 const cors = require('cors');
-
+const mongoose = require('mongoose');
 
 app.use(cors());
 app.use(express.json());
 
-LIST = []
+// LIST = []
 
-try{
-    LIST = JSON.parse(fs.readFileSync("156Booth.json", "utf8"));
-} catch{
-    LIST = []
-}
+// try{
+//     LIST = JSON.parse(fs.readFileSync("156Booth.json", "utf8"));
+// } catch{
+//     LIST = []
+// }
+const voterSchema = new mongoose.Schema({
+    Booth: Number,
+    PN: Number,
+    VoterID : String,
+    Name : String,
+    Father_Husband : String,
+    sex : String,
+    Age : Number,
+  });
+  const voterList = mongoose.model('VoterList', voterSchema);
 
-app.post("/booths/ID", (req, res) => {
-    const id = req.query.id
-    const person = LIST.find((a) => a.VoterID === id)
-    if(person){
-        res.json(person)
-    }else{
-        res.send("not present").status(404)
+  mongoose.connect('mongodb+srv://viswak:1999@atlascluster.jtlif75.mongodb.net/voterList', {dbName: "voterList" });
+
+  app.post("/booths/ID", async (req, res) => {
+    const id = String(req.query.id);
+    console.log('Received request for ID:', id);
+
+    try {
+        const person = await voterList.findOne({ VoterID: id });
+        console.log('Retrieved person:', person);
+
+        if (person) {
+            res.json(person);
+        } else {
+            res.status(404).send("Person not found.");
+        }
+    } catch (error) {
+        console.error('Error retrieving person:', error);
+        res.status(500).send("Internal Server Error");
     }
 });
 
 app.post("/booths/NAME", (req, res) => {
     const name = req.query.name
-    const person = LIST.find((a) => a.Name === name)
+    const person = LIST.findOne((a) => a.Name === name)
     if(person){
         res.json(person)
     }else{
@@ -35,9 +56,9 @@ app.post("/booths/NAME", (req, res) => {
     }
 });
 
-app.post("/booths/AGE", (req, res) => {
+app.post("/booths/AGE", async(req, res) => {
     const age = Number(req.query.age)
-    const person = LIST.filter((a) => a.Age === age)
+    const person = await VoterList.find({age})
     if(person){
         res.json(person)
     }else{
