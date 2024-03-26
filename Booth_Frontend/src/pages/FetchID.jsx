@@ -4,15 +4,15 @@ import { AppContext } from "../App";
 import { useQuery } from "@tanstack/react-query";
 
 export const FetchID = () => {
-  const { INPUT , setINPUT } = useContext(AppContext);
-  const { data, isloading, refetch } = useQuery({
+  const { INPUT, setINPUT } = useContext(AppContext);
+  const { data, isLoading, refetch } = useQuery({
     queryKey: ["ID"],
     queryFn: async () => {
       try {
         const response = await Axios.post(
           `http://localhost:3000/booths/ID?id=${INPUT}`
         );
-        console.log(response.data);
+        //console.log(response.data);
         return response.data;
       } catch (error) {
         console.error("Error:", error);
@@ -20,23 +20,33 @@ export const FetchID = () => {
       }
     },
   });
-  if (isloading) return <h2> Loading </h2>;
+  
+  if (isLoading) return <h2>Loading</h2>;
+
   return (
-    <div>
+    <div className="mt-4">
       <input
-                  type="text"
-                  placeholder="Enter Voter ID"
-                  onChange={(event) => {
-                    setINPUT(event.target.value);
-                  }}
-                />
-      <button onClick={refetch}>GET data</button>
-      <h2>BOOTH{data?.Booth}</h2>
-      <h2>NAME :{data?.Name}</h2>
-      <h2>AGE :{data?.Age}</h2>
-      <h2>Voter ID :{data?.VoterID}</h2>
-      <h2>Father/Husband : {data?.Father_Husband}</h2>
-      <h2>SEX : {data?.sex}</h2>
+        type="text"
+        placeholder="Enter Voter ID"
+        className="border border-gray-300 rounded px-4 py-2 mr-2"
+        onChange={(event) => {
+          setINPUT(event.target.value);
+        }}
+      />
+      <button
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        onClick={refetch}
+      >
+        GET Data
+      </button>
+      <div className="mt-4 bg-gray-900 text-white p-4 rounded-lg mb-4">
+        <h2 className="text-xl font-semibold">BOOTH: {data?.Booth}</h2>
+        <h2 className="text-xl font-semibold">NAME: {data?.Name}</h2>
+        <h2 className="text-xl font-semibold">AGE: {data?.Age}</h2>
+        <h2 className="text-xl font-semibold">Voter ID: {data?.VoterID}</h2>
+        <h2 className="text-xl font-semibold">Father/Husband: {data?.Father_Husband}</h2>
+        <h2 className="text-xl font-semibold">SEX: {data?.sex}</h2>
+      </div>
     </div>
   );
 };

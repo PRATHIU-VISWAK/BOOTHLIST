@@ -34,7 +34,7 @@ const voterSchema = new mongoose.Schema({
 
     try {
         const person = await voterList.findOne({ VoterID: id });
-        console.log('Retrieved person:', person);
+        //console.log('Retrieved person:', person);
 
         if (person) {
             res.json(person);
@@ -51,7 +51,7 @@ app.post("/booths/NAME", async(req, res) => {
     const name = String(req.query.name)
     try {
         const person = await voterList.findOne({ Name: name });
-        console.log('Retrieved person:', person);
+        //console.log('Retrieved person:', person);
 
         if (person) {
             res.json(person);
@@ -68,7 +68,7 @@ app.post("/booths/FH_NAME", async(req, res) => {
     const name = String(req.query.name)
     try {
         const person = await voterList.find({ Father_Husband : name });
-        console.log('Retrieved person:', person);
+       // console.log('Retrieved person:', person);
 
         if (person) {
             res.json(person);

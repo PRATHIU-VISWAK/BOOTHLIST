@@ -1,5 +1,5 @@
-import { useState, createContext } from "react";
 import "./App.css";
+import { useState, createContext } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { FetchNAME } from "./pages/FetchNAME";
 import { FetchID } from "./pages/FetchID";

@@ -6,43 +6,48 @@ import { FHnameCARD } from "../components/FHnameCARD";
 
 export const FetchFHNAME = () => {
   const { INPUT, setINPUT } = useContext(AppContext);
-  const { data, isloading, refetch } = useQuery({
+  const { data, isLoading, refetch } = useQuery({
     queryKey: ["FHNAME"],
     queryFn: async () => {
       try {
         const response = await Axios.post(
           `http://localhost:3000/booths/FH_NAME?name=${INPUT}`
         );
-        console.log(response.data);
+        // console.log(response.data);
         return response.data;
       } catch (error) {
-        //console.error("Error:", error);
+        // console.error("Error:", error);
         throw error;
       }
     },
   });
-  if (isloading) return <h2> Loading </h2>;
+
   return (
-    <div>
+    <div className="mt-4">
       <input
         type="text"
-        placeholder="Enter Voter ID"
+        placeholder="father or husband NAME"
+        className="border border-gray-300 rounded px-4 py-2 mr-2"
         onChange={(event) => {
           setINPUT(event.target.value);
         }}
       />
-      <button onClick={refetch}>GET data</button>
-      <div>
-      {isloading ? <h1>Loading </h1> : 
-        <>
-        {
-           data?.map((name, index) => (
-            <FHnameCARD name={name} key={index}/>
-           ))
-        }
-
-        </>
-        }
+      <button
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        onClick={refetch}
+      >
+        GET Data
+      </button>
+      <div className="mt-4">
+        {isLoading ? (
+          <h1>Loading...</h1>
+        ) : (
+          <div>
+            {data?.map((name, index) => (
+              <FHnameCARD name={name} key={index} />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
