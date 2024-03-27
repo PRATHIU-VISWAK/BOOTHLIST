@@ -3,7 +3,7 @@ import { useState, useContext } from "react";
 import { AppContext } from "../App";
 import { useQuery } from "@tanstack/react-query";
 import { FHnameCARD } from "../components/FHnameCARD";
-
+import "../App.css"
 export const FetchFHNAME = () => {
   const { INPUT, setINPUT } = useContext(AppContext);
   const { data, isLoading, refetch } = useQuery({
@@ -27,7 +27,7 @@ export const FetchFHNAME = () => {
       <input
         type="text"
         placeholder="father or husband NAME"
-        className="border border-gray-300 rounded px-4 py-2 mr-2"
+        className="border border-gray-100 rounded px-20 py-2 mr-2"
         onChange={(event) => {
           setINPUT(event.target.value);
         }}
@@ -38,7 +38,7 @@ export const FetchFHNAME = () => {
       >
         GET Data
       </button>
-      <div className="mt-4 bg-gray-900 text-white p-4 rounded-lg mb-4">
+      <div className="resultbg mt-4 bg-gray-900 text-white p-4 rounded-lg mb-4">
         {isLoading ? (
           <h2>Loading...</h2>
         ) : (

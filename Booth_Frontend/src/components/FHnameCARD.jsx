@@ -1,6 +1,7 @@
+import "../App.css"
 export const FHnameCARD = ({ name }) => {
   return (
-    <div className="mt-4 bg-gray-900 text-white p-4 rounded-lg mb-4">
+    <div className="result mt-4 text-white p-4 rounded-lg mb-4">
       <h2 className="text-xl font-semibold">BOOTH : {name?.Booth}</h2>
       <h2 className="text-xl font-semibold">SN : {name?.SN}</h2>
       <h2 className="text-xl font-semibold">PAGE NO : {name?.PN}</h2>

@@ -2,7 +2,7 @@ import Axios from "axios";
 import { useState, useContext } from "react";
 import { AppContext } from "../App";
 import { useQuery } from "@tanstack/react-query";
-
+import "../App.css"
 export const FetchID = () => {
   const { INPUT, setINPUT } = useContext(AppContext);
   const { data, isLoading, refetch } = useQuery({
@@ -21,7 +21,7 @@ export const FetchID = () => {
     },
   });
   
-  if (isLoading) return <h2>Loading</h2>;
+
 
   return (
     <div className="mt-4">
@@ -39,11 +39,12 @@ export const FetchID = () => {
       >
         GET Data
       </button>
-      <div className="mt-4 bg-gray-900 text-white p-4 rounded-lg mb-4">
+      <div className="resultbg mt-4 bg-gray-900 text-white p-4 rounded-lg mb-4">
         {isLoading ? (
-          <h2>Loading...</h2>
+          <h2 className="result mt-4 text-white p-4 rounded-lg mb-4" >Loading...</h2>
         ) : (
           <>
+        <div className="result mt-4 text-white p-4 rounded-lg mb-4">
         <h2 className="text-xl font-semibold">BOOTH: {data?.Booth}</h2>
         <h2 className="text-xl font-semibold">SN : {data?.SN}</h2>
         <h2 className="text-xl font-semibold">PAGE NO : {data?.PN}</h2>
@@ -52,6 +53,7 @@ export const FetchID = () => {
         <h2 className="text-xl font-semibold">Voter ID: {data?.VoterID}</h2>
         <h2 className="text-xl font-semibold">Father/Husband: {data?.Father_Husband}</h2>
         <h2 className="text-xl font-semibold">SEX: {data?.sex}</h2>
+        </div>
         </>
         )}
       </div>

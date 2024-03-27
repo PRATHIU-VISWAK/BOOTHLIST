@@ -3,6 +3,7 @@ import { useState, useContext } from "react";
 import { AppContext } from "../App";
 import { useQuery } from "@tanstack/react-query";
 import { FHnameCARD } from "../components/FHnameCARD";
+import "../App.css"
 export const FetchNAME = () => {
   const { INPUT, setINPUT } = useContext(AppContext);
   const { data, isLoading, refetch } = useQuery({
@@ -37,7 +38,7 @@ export const FetchNAME = () => {
       >
         GET Data
       </button>
-      <div className="mt-4 bg-gray-900 text-white p-4 rounded-lg mb-4">
+      <div className="resultbg mt-4 bg-gray-900 text-white p-4 rounded-lg mb-4">
         {isLoading ? (
           <h2>Loading...</h2>
         ) : (

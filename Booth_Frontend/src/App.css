@@ -6,11 +6,25 @@
 
 }
 body {
-  background-color: #535f5e;
+  background-color: #a8d0e7;
 }
 .navbar {
-  color: #000000;
-  
+  color: #ffffff;
+  background-color: #5f9bbe;
+}
+.navbar:hover {
+  color: #ffffff;
+  background-color: #0f0e24;
+}
+.navbarbg {
+  background-color: #a8d0e7;
+}
+.result{
+  color: #ffffff;
+  background-color: #3f8d66;
+}
+.resultbg {
+  background-color: #a8d0e7;
 }
 
 @keyframes logo-spin {
