@@ -35,7 +35,7 @@ const voterSchema = new mongoose.Schema({
   mongoose.connect('mongodb+srv://viswak:1999@atlascluster.jtlif75.mongodb.net/voterList', {dbName: "voterList" });
 
   app.get("/",(req,res) => {
-    res.send("voterList").status(401);
+    res.send("voterList");
   })
   app.post("/booths/ID", async (req, res) => {
     const id = String(req.query.id);
@@ -100,5 +100,7 @@ app.post("/booths/AGE", async(req, res) => {
     }
 });
 
-
+app.listen(port, () => {
+    console.log("Server is listening on port 3000");
+  });
   
