@@ -4,7 +4,13 @@ const fs = require('fs')
 const cors = require('cors');
 const mongoose = require('mongoose');
 
-app.use(cors());
+app.use(cors(
+    {
+            origin: ["http://deploy-booth.vercel.app"],
+            methods: ["POST", "GET"],
+            credentials: true,
+          }
+));
 app.use(express.json());
 
 // LIST = []
