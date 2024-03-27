@@ -8,7 +8,7 @@ app.use(cors(
     {
             origin: ["https://deploy-boothlist-frontend.vercel.app"],
             methods: ["POST", "GET"],
-            credentials: true,
+            credentials: true
           }
 ));
 app.use(express.json());
