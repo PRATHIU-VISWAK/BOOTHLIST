@@ -2,7 +2,7 @@ import Axios from "axios";
 import { useState, useContext } from "react";
 import { AppContext } from "../App";
 import { useQuery } from "@tanstack/react-query";
-
+import { FHnameCARD } from "../components/FHnameCARD";
 export const FetchNAME = () => {
   const { INPUT, setINPUT } = useContext(AppContext);
   const { data, isLoading, refetch } = useQuery({
