@@ -11,7 +11,7 @@ export const FetchFHNAME = () => {
     queryFn: async () => {
       try {
         const response = await Axios.post(
-          `deploy-booth.vercel.app/booths/FH_NAME?name=${INPUT}`
+          `deploy-booth-api.vercel.app/booths/FH_NAME?name=${INPUT}`
         );
         // console.log(response.data);
         return response.data;
