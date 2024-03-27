@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 
 app.use(cors(
     {
-            origin: ["deploy-boothlist-dh5vryqx4-prathiuviswaks-projects.vercel.app"],
+            origin: ["http://deploy-booth.vercel.app"],
             methods: ["POST", "GET"],
             credentials: true,
           }
