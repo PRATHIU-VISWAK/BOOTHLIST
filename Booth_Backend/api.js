@@ -3,7 +3,8 @@ const app = express();
 const fs = require('fs')
 const cors = require('cors');
 const mongoose = require('mongoose');
-
+require('dotenv').config()
+const PORT = process.env.PORT
 app.use(cors(
     {
             origin: ["https://deploy-boothlist-frontend.vercel.app"],
@@ -32,7 +33,7 @@ const voterSchema = new mongoose.Schema({
   });
   const voterList = mongoose.model('VoterList', voterSchema);
 
-  mongoose.connect('mongodb+srv://viswak:1999@atlascluster.jtlif75.mongodb.net/voterList', {dbName: "voterList" });
+  mongoose.connect(process.env.MONGO_URL, {dbName: "voterList" });
 
   app.get("/",(req,res) => {
     res.send("voterList");
