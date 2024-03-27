@@ -45,8 +45,8 @@ export const FetchID = () => {
         ) : (
           <>
         <h2 className="text-xl font-semibold">BOOTH: {data?.Booth}</h2>
-        <h2 className="text-xl font-semibold">NAME : {data?.SN}</h2>
-        <h2 className="text-xl font-semibold">NAME : {data?.PN}</h2>
+        <h2 className="text-xl font-semibold">SN : {data?.SN}</h2>
+        <h2 className="text-xl font-semibold">PAGE NO : {data?.PN}</h2>
         <h2 className="text-xl font-semibold">NAME: {data?.Name}</h2>
         <h2 className="text-xl font-semibold">AGE: {data?.Age}</h2>
         <h2 className="text-xl font-semibold">Voter ID: {data?.VoterID}</h2>
