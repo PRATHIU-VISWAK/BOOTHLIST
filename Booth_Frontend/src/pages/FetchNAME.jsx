@@ -10,7 +10,7 @@ export const FetchNAME = () => {
     queryFn: async () => {
       try {
         const response = await Axios.post(
-          `http://localhost:3000/booths/NAME?name=${INPUT}`
+          `deploy-booth.vercel.app/booths/NAME?name=${INPUT}`
         );
         // console.log(response.data);
         return response.data;
