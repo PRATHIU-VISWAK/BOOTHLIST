@@ -100,3 +100,7 @@ app.post("/booths/AGE", async(req, res) => {
         res.send("not present").status(404)
     }
 });
+
+app.listen(PORT, () => {
+    console.log("Server is listening on port " + PORT);
+});
