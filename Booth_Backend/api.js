@@ -35,9 +35,7 @@ const voterSchema = new mongoose.Schema({
 
   mongoose.connect(process.env.MONGO_URL, {dbName: "voterList" });
 
-  app.get("/",(req,res) => {
-    res.send("voterList");
-  })
+  app.get("/", (req, res) => res.send("Express on Vercel"));
   app.post("/booths/ID", async (req, res) => {
     const id = String(req.query.id);
     // console.log('Received request for ID:', id);
