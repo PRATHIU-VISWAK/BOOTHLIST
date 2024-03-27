@@ -27,7 +27,7 @@ export const FetchFHNAME = () => {
       <input
         type="text"
         placeholder="father or husband NAME"
-        className="border border-gray-100 rounded px-20 py-2 mr-2"
+        className="border border-gray-300 rounded-lg px-20 py-2 mr-2"
         onChange={(event) => {
           setINPUT(event.target.value);
         }}

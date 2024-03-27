@@ -7,24 +7,25 @@
 }
 body {
   background-color: #a8d0e7;
+  background-image: linear-gradient(to bottom right,#11998E, #38EF7D);
 }
 .navbar {
   color: #ffffff;
-  background-color: #5f9bbe;
+  background-color: #2c724f;
 }
 .navbar:hover {
   color: #ffffff;
   background-color: #0f0e24;
 }
 .navbarbg {
-  background-color: #a8d0e7;
+  background-color: #3f8d66;
 }
 .result{
   color: #ffffff;
   background-color: #3f8d66;
 }
 .resultbg {
-  background-color: #a8d0e7;
+  background-color: transparent;
 }
 
 @keyframes logo-spin {

@@ -27,7 +27,7 @@ export const FetchNAME = () => {
       <input
         type="text"
         placeholder="Enter Voter Name"
-        className="border border-gray-300 rounded px-4 py-2 mr-2"
+        className="border border-gray-300 rounded-lg px-4 py-2 mr-2"
         onChange={(event) => {
           setINPUT(event.target.value);
         }}

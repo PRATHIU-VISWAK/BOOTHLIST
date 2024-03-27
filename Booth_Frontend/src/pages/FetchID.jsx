@@ -28,7 +28,7 @@ export const FetchID = () => {
       <input
         type="text"
         placeholder="Enter Voter ID"
-        className="border border-gray-300 rounded px-4 py-2 mr-2"
+        className="border border-gray-300 rounded-lg px-4 py-2 mr-2"
         onChange={(event) => {
           setINPUT(event.target.value);
         }}
