@@ -42,9 +42,9 @@ export const FetchNAME = () => {
           <h2>Loading...</h2>
         ) : (
           <div>
-            {data?.map((name, index) => (
+            {/* {data?.map((name, index) => (
               <FHnameCARD name={name} key={index} />
-            ))}
+            ))} */}
           </div>
         )}
       </div>

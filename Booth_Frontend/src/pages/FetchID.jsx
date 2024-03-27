@@ -40,7 +40,7 @@ export const FetchID = () => {
         GET Data
       </button>
       <div className="mt-4 bg-gray-900 text-white p-4 rounded-lg mb-4">
-      {isLoading ? (
+        {isLoading ? (
           <h2>Loading...</h2>
         ) : (
           <>

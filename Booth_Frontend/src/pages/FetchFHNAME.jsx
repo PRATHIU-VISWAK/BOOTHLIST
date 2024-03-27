@@ -38,9 +38,9 @@ export const FetchFHNAME = () => {
       >
         GET Data
       </button>
-      <div className="mt-4">
+      <div className="mt-4 bg-gray-900 text-white p-4 rounded-lg mb-4">
         {isLoading ? (
-          <h1>Loading...</h1>
+          <h2>Loading...</h2>
         ) : (
           <div>
             {data?.map((name, index) => (
