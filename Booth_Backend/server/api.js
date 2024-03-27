@@ -30,7 +30,7 @@ const voterSchema = new mongoose.Schema({
 
   app.post("/booths/ID", async (req, res) => {
     const id = String(req.query.id);
-    console.log('Received request for ID:', id);
+    // console.log('Received request for ID:', id);
 
     try {
         const person = await voterList.findOne({ VoterID: id });

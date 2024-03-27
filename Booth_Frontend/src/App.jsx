@@ -12,7 +12,7 @@ export const AppContext = createContext();
 
 function App() {
   const query = new QueryClient();
-  const [INPUT, setINPUT] = useState("சண்முகம்");
+  const [INPUT, setINPUT] = useState("");
 
   return (
     <>

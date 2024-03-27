@@ -40,12 +40,18 @@ export const FetchID = () => {
         GET Data
       </button>
       <div className="mt-4 bg-gray-900 text-white p-4 rounded-lg mb-4">
+      {isLoading ? (
+          <h2>Loading...</h2>
+        ) : (
+          <>
         <h2 className="text-xl font-semibold">BOOTH: {data?.Booth}</h2>
         <h2 className="text-xl font-semibold">NAME: {data?.Name}</h2>
         <h2 className="text-xl font-semibold">AGE: {data?.Age}</h2>
         <h2 className="text-xl font-semibold">Voter ID: {data?.VoterID}</h2>
         <h2 className="text-xl font-semibold">Father/Husband: {data?.Father_Husband}</h2>
         <h2 className="text-xl font-semibold">SEX: {data?.sex}</h2>
+        </>
+        )}
       </div>
     </div>
   );
