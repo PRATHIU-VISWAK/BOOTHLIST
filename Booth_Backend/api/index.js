@@ -1,13 +1,17 @@
 const express = require("express");
 const app = express();
 const fs = require('fs')
+require('dotenv').config()
 const cors = require('cors');
 const mongoose = require('mongoose');
-require('dotenv').config()
+
+console.log("MONGO_URL:", process.env.MONGO_URL);
 const PORT = process.env.PORT
+const URL = process.env.URL
+console.log(URL);
 app.use(cors(
     {
-            origin: ["https://deploy-boothlist-frontend.vercel.app"],
+            origin: [URL],
             methods: ["POST", "GET"],
             credentials: true
           }

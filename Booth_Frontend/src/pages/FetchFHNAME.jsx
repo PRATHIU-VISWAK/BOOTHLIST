@@ -11,9 +11,9 @@ export const FetchFHNAME = () => {
     queryFn: async () => {
       try {
         const response = await Axios.post(
-          `https://deploy-booth-api.vercel.app/booths/FH_NAME?name=${INPUT}`
+          `${import.meta.env.VITE_API_URL}/booths/FH_NAME?name=${INPUT}`
         );
-        // console.log(response.data);
+        
         return response.data;
       } catch (error) {
         // console.error("Error:", error);
