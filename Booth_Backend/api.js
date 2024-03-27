@@ -5,7 +5,11 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 
 app.use(cors(
-
+    {
+            origin: ["https://deploy-boothlist-frontend.vercel.app/"],
+            methods: ["POST", "GET"],
+            credentials: true
+          }
 ));
 app.use(express.json());
 
