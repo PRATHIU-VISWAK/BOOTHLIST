@@ -23,5 +23,5 @@
       ]
     }
   ],
-  "rewrites": [{ "source": "/(.*)", "dest": "/" }]
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
