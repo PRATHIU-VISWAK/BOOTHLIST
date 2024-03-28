@@ -10,7 +10,9 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background: #38ef7d; /* Fallback color */
+  background-image: linear-gradient(to bottom right, #11998e, #38ef7d);
+  background-size: cover;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -32,9 +34,7 @@ body {
   display: flex;
   min-width: 420px;
   min-height: 100vh;
-  background: #38ef7d; /* Fallback color */
-  background-image: linear-gradient(to bottom right, #11998e, #38ef7d);
-  background-size: cover; /* Ensure the background covers the entire viewport */
+   /* Ensure the background covers the entire viewport */
 }
 
 
