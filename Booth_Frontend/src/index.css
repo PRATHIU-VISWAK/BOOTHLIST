@@ -10,8 +10,13 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
+
   background-color: #38ef7d;
   background-image: linear-gradient(to bottom right, #11998e, #38ef7d);
+  background-repeat: no-repeat;
+  background-size: 300%;
+  background-position: 0% 100%;
+  background-blend-mode: normal;
 
 
   font-synthesis: none;
@@ -32,8 +37,8 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  min-width: 320px;
-  min-height: 100vh;
+  min-width: 420px; /* Keep minimum width for small screens */
+  min-height: 200vh;
 }
 
 h1 {
@@ -70,5 +75,12 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  body {
+    flex-direction: column; /* Stack items vertically on small screens */
+    min-width: auto; /* Allow the body to shrink to fit the screen */
   }
 }
