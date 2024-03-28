@@ -11,7 +11,6 @@ export const DisplayCARD = ({ name }) => {
       <h2 className="text-m font-bold">AGE : {name?.Age}</h2>
       {/* <h2 className="text-m font-bold">SEX : {name?.sex}</h2> */}
       <br />
-      <br />
     </div>
   );
 };
