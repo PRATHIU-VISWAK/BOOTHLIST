@@ -30,11 +30,13 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  min-width: 500px;
+  min-width: 420px;
   min-height: 100vh;
-  background-color: #a8d0e7;
+  background: #38ef7d; /* Fallback color */
   background-image: linear-gradient(to bottom right, #11998e, #38ef7d);
+  background-size: cover; /* Ensure the background covers the entire viewport */
 }
+
 
 h1 {
   font-size: 3.2em;
