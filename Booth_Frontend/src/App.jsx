@@ -22,8 +22,6 @@ function App() {
             <Router>
               <NAVBAR/>
               <div>
-                
-                {/* <button onClick={() => fetchData()}>click</button>  */}
                 <Routes>
                   <Route path="/" element={<HOME/>}></Route>
                   <Route path="/fetchid" element={<FetchID/>}></Route>

@@ -1,13 +1,11 @@
-
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-
 }
 body {
   background-color: #a8d0e7;
-  background-image: linear-gradient(to bottom right,#11998E, #38EF7D);
+  background-image: linear-gradient(to bottom right, #11998e, #38ef7d);
 }
 .navbar {
   color: #ffffff;
@@ -20,10 +18,23 @@ body {
 .navbarbg {
   background-color: #3f8d66;
 }
-.result{
-  color: #ffffff;
-  background-color: #3f8d66;
+.result {
+  color: rgb(0, 0, 0 , 1);
+  font-size: larger;
+  font-style: italic;
+  /* background-color: #3f8d66; */
+  background-image: linear-gradient(
+      to bottom,
+      rgba(47, 107, 7, 0.5),
+      rgba(3, 65, 11, 0.7)
+    ),
+    url("./assets/100A.jpeg");
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+  background-size: 100% 100%;
+  background-blend-mode: overlay;
 }
+
 .resultbg {
   background-color: transparent;
 }

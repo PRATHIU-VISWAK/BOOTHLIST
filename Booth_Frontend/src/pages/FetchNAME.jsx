@@ -2,7 +2,7 @@ import Axios from "axios";
 import { useState, useContext } from "react";
 import { AppContext } from "../App";
 import { useQuery } from "@tanstack/react-query";
-import { FHnameCARD } from "../components/FHnameCARD";
+import { DisplayCARD } from "../components/DisplayCARD";
 import "../App.css"
 export const FetchNAME = () => {
   const { INPUT, setINPUT } = useContext(AppContext);
@@ -44,7 +44,7 @@ export const FetchNAME = () => {
         ) : (
           <div>
             {data?.map((name, index) => (
-              <FHnameCARD name={name} key={index} />
+              <DisplayCARD name={name} key={index} />
             ))}
           </div>
         )}
