@@ -10,9 +10,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background: #38ef7d; /* Fallback color */
-  background-image: linear-gradient(to bottom right, #11998e, #38ef7d);
-  background-size: cover;
+  background-color: #38ef7d;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -32,11 +30,9 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  min-width: 420px;
+  min-width: 320px;
   min-height: 100vh;
-   /* Ensure the background covers the entire viewport */
 }
-
 
 h1 {
   font-size: 3.2em;
