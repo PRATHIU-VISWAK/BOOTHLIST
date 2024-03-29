@@ -35,11 +35,12 @@ export const FetchID = () => {
           setINPUT(event.target.value);
         }}
       />
-      <Button
+      <button
+        className="bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded"
         onClick={refetch}
       >
         GET Data
-      </Button>
+      </button>
       {/* <div className="resultbg mt-4 bg-gray-900 text-white p-4 rounded-lg mb-4">
         {isLoading ? (
           <h2 className="result mt-4 text-white p-4 rounded-lg mb-4" >Loading...</h2>
