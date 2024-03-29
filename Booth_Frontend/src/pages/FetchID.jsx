@@ -4,6 +4,8 @@ import { AppContext } from "../App";
 import { useQuery } from "@tanstack/react-query";
 import "../App.css";
 import { DisplayCARD } from "../components/DisplayCARD";
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 
 export const FetchID = () => {
   const { INPUT, setINPUT } = useContext(AppContext);
@@ -33,12 +35,11 @@ export const FetchID = () => {
           setINPUT(event.target.value);
         }}
       />
-      <button
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      <Button
         onClick={refetch}
       >
         GET Data
-      </button>
+      </Button>
       {/* <div className="resultbg mt-4 bg-gray-900 text-white p-4 rounded-lg mb-4">
         {isLoading ? (
           <h2 className="result mt-4 text-white p-4 rounded-lg mb-4" >Loading...</h2>
