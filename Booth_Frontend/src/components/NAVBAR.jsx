@@ -6,7 +6,7 @@ export const NAVBAR = () => {
             <Link to="/" className="navbar py-2 px-4 rounded-lg bg-gray-300 hover:bg-gray-500 mb-2 md:mb-0 md:py-1 md:px-2">HOME</Link>
             <Link to="/fetchid" className="navbar py-2 px-4 rounded-lg bg-gray-300 hover:bg-gray-500 mb-2 md:mb-0 md:py-1 md:px-2">Voter ID</Link>
             <Link to="/fetchname" className="navbar py-2 px-4 rounded-lg bg-gray-300 hover:bg-gray-500 mb-2 md:mb-0 md:py-1 md:px-2">Voter NAME</Link>
-            <Link to="/fetchfhname" className="navbar py-2 px-4 rounded-lg bg-gray-300 hover:bg-gray-500 mb-2 md:mb-0 md:py-1 md:px-2">FATHER or HUSBAND NAME</Link>
+            <Link to="/fetchfhname" className="navbar py-2 px-4 rounded-lg bg-gray-300 hover:bg-gray-500 mb-2 md:mb-0 md:py-1 md:px-2">RELATIVE NAME</Link>
         </div>
     );
 };
