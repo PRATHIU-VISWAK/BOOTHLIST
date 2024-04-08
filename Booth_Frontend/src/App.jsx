@@ -7,6 +7,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { NAVBAR } from "./components/NAVBAR";
 import { HOME } from "./pages/HOME";
 import { FetchFHNAME } from "./pages/FetchFHNAME";
+import { Heading2 } from "lucide-react";
 
 export const AppContext = createContext();
 
@@ -27,6 +28,7 @@ function App() {
                   <Route path="/fetchid" element={<FetchID/>}></Route>
                   <Route path="/fetchname" element={<FetchNAME/>}></Route>
                   <Route path="/fetchfhname" element={<FetchFHNAME/>}></Route>
+                  <Route path="*" element={<h2>Not Found</h2>} />
                 </Routes>
               </div>
             </Router>
