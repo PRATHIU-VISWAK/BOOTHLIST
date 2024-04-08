@@ -28,7 +28,7 @@ export const FetchFHNAME = () => {
     <div className="mt-4">
       <input
         type="text"
-        placeholder="father or husband NAME"
+        placeholder="Relative NAME"
         className="border border-gray-300 rounded-lg px-20 py-2 mr-2"
         onChange={(event) => {
           setINPUT(event.target.value);
