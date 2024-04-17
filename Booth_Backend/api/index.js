@@ -55,7 +55,7 @@ const voterSchema = new mongoose.Schema({
             res.status(404).send("Person not found.");
         }
     } catch (error) {
-        console.error('Error retrieving person:', error);
+        console.error('Error in retrieving person:', error);
         res.status(500).send("Internal Server Error");
     }
 });
