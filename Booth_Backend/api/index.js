@@ -87,6 +87,7 @@ app.post("/booths/FH_NAME", async(req, res) => {
             res.json(person);
         } else {
             res.status(404).send("Person not found.");
+            console.log("not found");
         }
     } catch (error) {
         console.error('Error retrieving person:', error);
