@@ -29,17 +29,17 @@ export const FetchID = () => {
     <div className="mt-4">
       <input
         type="text"
-        placeholder="Enter Voter ID"
-        className="border border-gray-300 rounded-lg px-4 py-2 mr-2"
+        placeholder="Relative NAME"
+        className="border border-gray-300 rounded-xl px-4 py-2 mr-2"
         onChange={(event) => {
           setINPUT(event.target.value);
         }}
       />
       <button
-        className="bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded"
+        className="bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded-xl"
         onClick={refetch}
       >
-        GET Data
+        SEARCH
       </button>
       {/* <div className="resultbg mt-4 bg-gray-900 text-white p-4 rounded-lg mb-4">
         {isLoading ? (
@@ -55,7 +55,9 @@ export const FetchID = () => {
 
       <div className="resultbg mt-4 bg-gray-900 text-white p-4 rounded-lg mb-4">
         {isLoading ? (
-          <h2>Loading...</h2>
+          <div className="pt-80">
+          <progress className="progress  w-90"></progress>
+        </div>
         ) : (
           <div>
           <DisplayCARD name={data}/>
